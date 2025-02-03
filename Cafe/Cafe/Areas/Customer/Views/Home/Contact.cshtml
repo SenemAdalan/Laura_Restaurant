@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewData["Title"] = "İletişim";
+    Layout = "~/Views/Shared/_ALayout.cshtml";
+}
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Title Page -->
+<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(/Templates/images/bg-title-page-02.jpg);">
+	<h2 class="tit6 t-center">
+		İLETİŞİM
+	</h2>
+</section>
+
+
+
+<!-- Contact form -->
+<section class="section-contact bg1-pattern p-t-20 p-b-20">
+	<!-- Map -->
+    <div class="map-container" style="text-align: center; margin-top: 40px; margin-bottom:1.5cm">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.893172360997!2d29.88185767502753!3d40.69835033845278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb4f17ddca70df%3A0xe891bc68cc79d01c!2sKocaeli%20Sa%C4%9Fl%C4%B1k%20ve%20Teknoloji%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1734033964138!5m2!1str!2str" width="800" height="450" style="border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Contact Information Section -->
+    <div class="contact-info">
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div class="contact-details">
+                <h2>Telefon</h2>
+                <p>0262 999 80 85</p>
+                <p>0850 450 28 28</p>
+            </div>
+        </div>
+
+        <div class="contact-item">
+            <i id="email-icon" class="fas fa-envelope"></i>
+            <div class="contact-details">
+                <h2>Email</h2>
+                <p><a href="mailto:info@kocaelisaglik.edu.tr">info@kocaelisaglik.edu.tr</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Address Section -->
+    <div class="contact-address">
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div class="contact-details">
+                <h2>Adres</h2>
+                <a href="https://www.google.com/maps/place/Kocaeli+Sa%C4%9Fl%C4%B1k+ve+Teknoloji+%C3%9Cniversitesi/data=!4m2!3m1!1s0x0:0xe891bc68cc79d01c?sa=X&ved=1t:2428&ictx=111"
+                   target="_blank"
+                   class="txt24">
+                    Yeniköy Mahallesi Ilıca Caddesi No:29, Başiskele/Kocaeli
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .contact-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 20px auto;
+        max-width: 600px;
+        font-family: 'Open Sans';
+    }
+
+    .contact-item {
+        display: flex;
+        align-items: top;
+        gap: 10px;
+    }
+
+    .contact-details p {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .contact-item h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    #email-icon {
+        font-size: 24px;
+        color: #000;
+    }
+
+    .fas.fa-phone {
+        font-size: 24px;
+        color: #000;
+    }
+
+    .contact-address {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: 22px auto;
+        max-width: 600px;
+        font-family: 'Open Sans';
+    }
+
+        .contact-address h2 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: 'Open Sans';
+        }
+
+        .contact-address p {
+            margin: 0;
+            font-size: 16px;
+            font-family: 'Open Sans';
+        }
+
+    .fas.fa-map-marker-alt {
+        font-size: 24px;
+        color: #000;
+    }
+
+    .contact-details a {
+        color: black;
+        text-decoration: none;
+    }
+
+        .contact-details a:hover {
+            color: red; /* Link üzerine gelindiğinde kırmızı renk */
+        }
+
+    .link {
+        font-weight: 700;
+        padding: 15px 25px;
+        font-size: 17px;
+        font-family: 'Open Sans';
+        font-weight: bold;
+        color: #000000;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+        .link:hover {
+            color: red; /* Link üzerine gelindiğinde kırmızı renk */
+        }
+</style>
+

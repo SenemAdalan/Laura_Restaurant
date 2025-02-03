@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>@ViewData["Title"]</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/Templates/images/icons/favicon.png" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/vendor/bootstrap/css/bootstrap.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/fonts/themify/themify-icons.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/vendor/animate/animate.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/vendor/css-hamburgers/hamburgers.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/vendor/animsition/css/animsition.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/vendor/select2/select2.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/vendor/daterangepicker/daterangepicker.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/vendor/slick/slick.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/vendor/lightbox2/css/lightbox.min.css">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/Templates/css/util.css">
+	<link rel="stylesheet" type="text/css" href="/Templates/css/main.css">
+	<!--===============================================================================================-->
+</head>
+<body class="animsition">
+
+	<!-- Header -->
+	<header>
+		<!-- Header desktop -->
+		<div class="wrap-menu-header gradient1 trans-0-4">
+			<div class="container h-full">
+				<div class="wrap_header trans-0-3">
+					<!-- Logo -->
+					<div class="logo">
+						<a asp-area="Customer" asp-controller="Home" asp-action="Index">
+							<img src="/Templates/images/logo.png" alt="IMG-LOGO" data-logofixed="/Templates/images/logo.png">
+						</a>
+					</div>
+
+					<!-- Menu -->
+					<div class="wrap_menu p-l-45 p-l-0-xl">
+						<nav class="menu">
+							<ul class="main_menu">
+								@if (User.Identity.IsAuthenticated)
+								{
+									<li>
+										<a asp-area="Customer" asp-controller="Home" asp-action="Index">ANASAYFA</a>
+									</li>
+									<li>
+										<a asp-area="Admin" asp-controller="Reservation" asp-action="Index" target="_blank">ADMİN PANELİ</a>
+									</li>
+									<li>
+										<form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+											<button type="submit" class="nav-link btn btn-link text-white">ÇIKIŞ</button>
+										</form>
+									</li>
+								}
+								else
+								{
+									<li>
+										<a asp-area="Customer" asp-controller="Home" asp-action="Index">ANASAYFA</a>
+									</li>
+									<li>
+										<a asp-area="Customer" asp-controller="Home" asp-action="Reservation">REZERVASYON</a>
+									</li>
+									<li>
+										<a asp-area="Customer" asp-controller="Home" asp-action="Menu">MENÜ</a>
+									</li>
+									<li>
+										<a asp-area="Customer" asp-controller="Home" asp-action="Gallery">GALERİ</a>
+									</li>
+
+									<li>
+										<a asp-area="Customer" asp-controller="Home" asp-action="About">HAKKIMIZDA</a>
+									</li>
+
+									<li>
+										<a asp-area="Customer" asp-controller="Home" asp-action="Contact">İLETİŞİM</a>
+									</li>
+								}
+							</ul>
+						</nav>
+					</div>
+
+					<!-- Social -->
+					<div class="social flex-w flex-l-m p-r-20">
+						<a href="https://www.facebook.com/kocaelisaglik.t.universitesi" target="_blank" class="fs-15 c-white"><i class="fa fa-facebook m-l-18" aria-hidden="true"></i></a>
+						<a href="https://www.instagram.com/kocaelisaglik.t.uni/" target="_blank" class="fs-15 c-white"><i class="fa fa-instagram m-l-18" aria-hidden="true"></i></a>
+						<a href="https://www.linkedin.com/school/kostu/" target="_blank" class="fs-15 c-white"><i class="fa fa-linkedin m-l-18" aria-hidden="true"></i></a>
+						<a href="https://www.youtube.com/channel/UC3-TsftiUxyObpPGce2cHDQ?view_as=subscriber" target="_blank" class="fs-15 c-white"><i class="fa fa-youtube-play m-l-18" aria-hidden="true"></i></a>
+
+						<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Sidebar -->
+	<aside class="sidebar trans-0-4">
+		<!-- Button Hide sidebar -->
+		<button class="btn-hide-sidebar ti-close color0-hov trans-0-4"></button>
+
+		<!-- - -->
+		<ul class="menu-sidebar p-t-95 p-b-70">
+			<li class="t-center m-b-13">
+				<a asp-area="Customer" asp-controller="Home" asp-action="Index" class="txt19">ANASAYFA</a>
+			</li>
+
+			<li class="t-center m-b-13">
+				<a asp-area="Customer" asp-controller="Home" asp-action="Menu" class="txt19">MENÜ</a>
+			</li>
+
+			<li class="t-center m-b-13">
+				<a asp-area="Customer" asp-controller="Home" asp-action="Gallery" class="txt19">GALERİ</a>
+			</li>
+
+			<li class="t-center m-b-13">
+				<a asp-area="Customer" asp-controller="Home" asp-action="About" class="txt19">HAKKIMIZDA</a>
+			</li>
+
+			<li class="t-center m-b-33">
+				<a asp-area="Customer" asp-controller="Home" asp-action="Contact" class="txt19">İLETİŞİM</a>
+			</li>
+
+			<li class="t-center">
+				<!-- Button3 -->
+				<a asp-area="Customer" asp-controller="Home" asp-action="Reservation" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
+					REZERVASYON
+				</a>
+			</li>
+			<br />
+			@if (User.Identity.IsAuthenticated)
+			{
+				<li class="t-center m-b-13">
+					<a asp-area="Admin" asp-controller="Reservation" asp-action="Index" target="_blank" class="txt19">ADMİN PANELİ</a>
+				</li>
+				<li class="t-center">
+					<form class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+						<button type="submit" class="nav-link btn btn-link text-white">ÇIKIŞ</button>
+					</form>
+				</li>
+			}
+		</ul>
+
+		<!-- - -->
+		<div class="gallery-sidebar t-center p-l-60 p-r-60 p-b-40">
+			<!-- - -->
+			<h4 class="txt20 m-b-33">
+				GALERİ
+			</h4>
+
+			<!-- Gallery -->
+			<div class="wrap-gallery-sidebar flex-w">
+				<a class="item-gallery-sidebar wrap-pic-w" href="/Templates/images/photo-gallery-thumb-13.jpg" data-lightbox="gallery-footer">
+					<img src="/Templates/images/photo-gallery-thumb-13.jpg" alt="GALLERY">
+				</a>
+
+				<a class="item-gallery-sidebar wrap-pic-w" href="/Templates/images/photo-gallery-thumb-14.jpg" data-lightbox="gallery-footer">
+					<img src="/Templates/images/photo-gallery-thumb-14.jpg" alt="GALLERY">
+				</a>
+
+				<a class="item-gallery-sidebar wrap-pic-w" href="/Templates/images/photo-gallery-thumb-15.jpg" data-lightbox="gallery-footer">
+					<img src="/Templates/images/photo-gallery-thumb-15.jpg" alt="GALLERY">
+				</a>
+
+				<a class="item-gallery-sidebar wrap-pic-w" href="/Templates/images/photo-gallery-thumb-16.jpg" data-lightbox="gallery-footer">
+					<img src="/Templates/images/photo-gallery-thumb-16.jpg" alt="GALLERY">
+				</a>
+
+				<a class="item-gallery-sidebar wrap-pic-w" href="/Templates/images/photo-gallery-thumb-17.jpg" data-lightbox="gallery-footer">
+					<img src="/Templates/images/photo-gallery-thumb-17.jpg" alt="GALLERY">
+				</a>
+
+				<a class="item-gallery-sidebar wrap-pic-w" href="/Templates/images/photo-gallery-thumb-18.jpg" data-lightbox="gallery-footer">
+					<img src="/Templates/images/photo-gallery-thumb-18.jpg" alt="GALLERY">
+				</a>
+
+				<a class="item-gallery-sidebar wrap-pic-w" href="/Templates/images/photo-gallery-thumb-19.jpg" data-lightbox="gallery-footer">
+					<img src="/Templates/images/photo-gallery-thumb-19.jpg" alt="GALLERY">
+				</a>
+
+				<a class="item-gallery-sidebar wrap-pic-w" href="/Templates/images/photo-gallery-thumb-20.jpg" data-lightbox="gallery-footer">
+					<img src="/Templates/images/photo-gallery-thumb-20.jpg" alt="GALLERY">
+				</a>
+
+				<a class="item-gallery-sidebar wrap-pic-w" href="/Templates/images/photo-gallery-thumb-21.jpg" data-lightbox="gallery-footer">
+					<img src="/Templates/images/photo-gallery-thumb-21.jpg" alt="GALLERY">
+				</a>
+			</div>
+		</div>
+	</aside>
+
+	@RenderBody()
+
+	<!-- Footer -->
+	<footer class="bg1">
+		<div class="container p-t-40 p-b-70">
+			<div class="row">
+				<div class="col-sm-6 col-md-4 p-t-50">
+					<!-- - -->
+					<h4 class="txt13 m-b-33">
+						İLETİŞİM
+					</h4>
+
+					<ul class="m-b-70">
+						<li class="txt14 m-b-14">
+							<i class="fa fa-map-marker fs-16 dis-inline-block size19" aria-hidden="true"></i>
+							<a href="https://www.google.com/maps/place/Kocaeli+Sa%C4%9Fl%C4%B1k+ve+Teknoloji+%C3%9Cniversitesi/data=!4m2!3m1!1s0x0:0xe891bc68cc79d01c?sa=X&ved=1t:2428&ictx=111"
+							   target="_blank"
+							   class="txt14">
+								Yeniköy Mahallesi Ilıca Caddesi No:29, Başiskele/Kocaeli
+							</a>
+						</li>
+
+						<li class="txt14 m-b-14">
+							<i class="fa fa-phone fs-16 dis-inline-block size19" aria-hidden="true"></i>
+							0262 999 80 85
+						</li>
+
+						<li class="txt14 m-b-14">
+							<i class="fa fa-envelope fs-13 dis-inline-block size19" aria-hidden="true"></i>
+							<a href="mailto:info@kocaelisaglik.edu.tr">info@kocaelisaglik.edu.tr</a>
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-md-4 p-t-50">
+					<!-- - -->
+					<h4 class="txt13 m-b-33">
+						ÇALIŞMA SAATLERİ
+					</h4>
+
+					<ul>
+						<li class="txt14">
+							09:00 – 00:00
+						</li>
+
+						<li class="txt14">
+							Her Gün
+						</li>
+					</ul>
+				</div>
+
+				<div class="col-sm-6 col-md-4 p-t-50">
+					<!-- - -->
+					<h4 class="txt13 m-b-38">
+						GALERİ
+					</h4>
+
+					<!-- Gallery footer -->
+					<div class="wrap-gallery-footer flex-w">
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-01.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-01.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-02.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-02.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-03.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-03.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-04.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-04.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-05.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-05.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-06.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-06.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-07.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-07.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-08.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-08.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-09.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-09.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-10.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-10.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-11.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-11.jpg" alt="GALLERY">
+						</a>
+
+						<a class="item-gallery-footer wrap-pic-w" href="/Templates/images/photo-gallery-thumb-12.jpg" data-lightbox="gallery-footer">
+							<img src="/Templates/images/photo-gallery-thumb-12.jpg" alt="GALLERY">
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="end-footer bg2">
+			<div class="container">
+				<div class="flex-sb-m flex-w p-t-22 p-b-22">
+					<div class="p-t-5 p-b-5">
+						<a href="https://www.facebook.com/kocaelisaglik.t.universitesi" target="_blank" class="fs-15 c-white"><i class="fa fa-facebook m-l-18" aria-hidden="true"></i></a>
+						<a href="https://www.instagram.com/kocaelisaglik.t.uni/" target="_blank" class="fs-15 c-white"><i class="fa fa-instagram m-l-18" aria-hidden="true"></i></a>
+						<a href="https://www.linkedin.com/school/kostu/" target="_blank" class="fs-15 c-white"><i class="fa fa-linkedin m-l-18" aria-hidden="true"></i></a>
+						<a href="https://www.youtube.com/channel/UC3-TsftiUxyObpPGce2cHDQ?view_as=subscriber" target="_blank" class="fs-15 c-white"><i class="fa fa-youtube-play m-l-18" aria-hidden="true"></i></a>
+					</div>
+
+					<div class="txt17 p-r-20 p-t-5 p-b-5">
+						<a asp-area="Identity" asp-page="/Account/Login" target="_blank">Laura Restaurant</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top bg0-hov" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="fa fa-angle-double-up" aria-hidden="true"></i>
+		</span>
+	</div>
+
+	<!-- Container Selection1 -->
+	<div id="dropDownSelect1"></div>
+
+	<!-- Modal Video 01-->
+	<div class="modal fade" id="modal-video-01" tabindex="-1" role="dialog" aria-hidden="true">
+
+		<div class="modal-dialog" role="document" data-dismiss="modal">
+			<div class="close-mo-video-01 trans-0-4" data-dismiss="modal" aria-label="Close">&times;</div>
+
+			<div class="wrap-video-mo-01">
+				<div class="w-full wrap-pic-w op-0-0"><img src="/Templates/images/icons/video-16-9.jpg" alt="IMG"></div>
+				<div class="video-mo-01">
+					<iframe src="https://www.youtube.com/embed/5k1hSu2gdKE?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--===============================================================================================-->
+	<script type="text/javascript" src="/Templates/vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script type="text/javascript" src="/Templates/vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script type="text/javascript" src="/Templates/vendor/bootstrap/js/popper.js"></script>
+	<script type="text/javascript" src="/Templates/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script type="text/javascript" src="/Templates/vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script type="text/javascript" src="/Templates/vendor/daterangepicker/moment.min.js"></script>
+	<script type="text/javascript" src="/Templates/vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script type="text/javascript" src="/Templates/vendor/slick/slick.min.js"></script>
+	<script type="text/javascript" src="/Templates/js/slick-custom.js"></script>
+	<!--===============================================================================================-->
+	<script type="text/javascript" src="/Templates/vendor/parallax100/parallax100.js"></script>
+	<script type="text/javascript">
+		$('.parallax100').parallax100();
+	</script>
+	<!--===============================================================================================-->
+	<script type="text/javascript" src="/Templates/vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script type="text/javascript" src="/Templates/vendor/lightbox2/js/lightbox.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="/Templates/js/main.js"></script>
+	@await RenderSectionAsync("Scripts", required: false)
+	@await Component.InvokeAsync("NToastNotify")
+</body>
+</html>
