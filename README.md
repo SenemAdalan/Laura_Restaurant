@@ -4,7 +4,7 @@
 **Laura Restaurant**, kullanıcıların restoran hakkında detaylı bilgi alabileceği, menüyü inceleyebileceği ve **çevrimiçi rezervasyon yapabileceği** MVC tabanlı bir web sitesidir.  
 
 - **Yapılış Tarihi:** 10 Ocak 2025
-- **Son Güncelleme:** 11 Şubat 2025
+- **Son Güncelleme:** 11 Şubat 2025 
 
 ---
 
